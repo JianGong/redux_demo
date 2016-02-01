@@ -1,4 +1,7 @@
 
 export default function ceshi(state, action) {
-	console.log(action.type);
+	if(action.type=== 'hello'){
+		return {hehe:"xiaoyang"}
+	}
+	return {hehe:"ceshi"}
 }
