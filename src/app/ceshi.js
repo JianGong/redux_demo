@@ -1,27 +1,28 @@
 import React from 'react'
-import {welcome} from '../actions/index'
+import {ceshi} from '../actions/index'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
 const Welcome = React.createClass({
 
   handleClick() {
-  	this.props.actions.welcome();
+  	this.props.actions.ceshi();
   	console.log('helloworld1');
   },
 
   render(){
-    console.log(this.props);
-    return (<div onClick={this.handleClick}>helloworld1{this.props.ceshi}</div>);
+    return (<div onClick={this.handleClick}>helloworld2{this.props.ceshi}
+        <div>{this.props.children}</div>
+      </div>);
   }
 })
 
 const stateToProps = state => ({
-	ceshi: state.welcome.ceshi
+	ceshi: state.hehe
 });
 
 const dispatchToProps = dispatch => ({
-	actions: bindActionCreators({ welcome }, dispatch)
+	actions: bindActionCreators({ ceshi }, dispatch)
 });
 
 export default connect(stateToProps, dispatchToProps)(Welcome);

@@ -3,3 +3,9 @@ export function ceshi(){
 		type: "hello",
 	}
 }
+
+export function welcome(){
+	return {
+		type: "ceshi",
+	}
+}
